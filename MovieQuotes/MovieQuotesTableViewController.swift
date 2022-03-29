@@ -21,6 +21,7 @@ class MovieQuotesTableViewController: UITableViewController {
 
     let kMovieQuoteCell = "MovieQuoteCell"//1. add constant for MovieQuoteCell identifier
 //    let names = ["Dave", "Kristy", "Mckinley", "Keegan", "Bowen", "Neale"]//3. add array of names
+    let kmovieQuoteDetailSegue = "movieQuoteDetailSegue"
     var movieQuotes = [MovieQuote]()
     
     override func viewDidLoad() {
@@ -36,12 +37,22 @@ class MovieQuotesTableViewController: UITableViewController {
         
         let mq1 = MovieQuote(quote: "I'll be back", movie: "The terminator")
         let mq2 = MovieQuote(quote: "I'll be back", movie: "The terminator?")
-        let mq3 = MovieQuote(quote: "I'll be back", movie: "The terminator!")
+        let mq3 = MovieQuote(quote: "Hello, my name is ", movie: "The terminator!")
         let mq4 = MovieQuote(quote: "I'll be back", movie: "The terminator<>")
         movieQuotes.append(mq1)
         movieQuotes.append(mq2)
         movieQuotes.append(mq3)
         movieQuotes.append(mq4)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        tableView.reloadData()
     }
     
     @objc func showAddQuoteDialog(){
@@ -136,8 +147,15 @@ class MovieQuotesTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == kmovieQuoteDetailSegue{
+            let mqdvc = segue.destination as! MovieQuoteDetailViewController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                mqdvc.movieQuote = movieQuotes[indexPath.row]
+            }
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }

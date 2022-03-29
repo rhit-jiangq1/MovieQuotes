@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087053FC27F3343700752245 /* MovieQuoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087053FB27F3343700752245 /* MovieQuoteDetailViewController.swift */; };
 		088B536827F1DD9A00959FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B536727F1DD9A00959FAF /* AppDelegate.swift */; };
 		088B536A27F1DD9A00959FAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B536927F1DD9A00959FAF /* SceneDelegate.swift */; };
 		088B536F27F1DD9A00959FAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088B536D27F1DD9A00959FAF /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		087053FB27F3343700752245 /* MovieQuoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieQuoteDetailViewController.swift; sourceTree = "<group>"; };
 		088B536427F1DD9A00959FAF /* MovieQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088B536727F1DD9A00959FAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		088B536927F1DD9A00959FAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				088B537227F1DD9B00959FAF /* LaunchScreen.storyboard */,
 				088B537527F1DD9B00959FAF /* Info.plist */,
 				088B537D27F1E59900959FAF /* MoveiQuote.swift */,
+				087053FB27F3343700752245 /* MovieQuoteDetailViewController.swift */,
 			);
 			path = MovieQuotes;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				088B537E27F1E59900959FAF /* MoveiQuote.swift in Sources */,
 				088B537C27F1E02300959FAF /* MovieQuotesTableViewController.swift in Sources */,
 				088B536A27F1DD9A00959FAF /* SceneDelegate.swift in Sources */,
+				087053FC27F3343700752245 /* MovieQuoteDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
