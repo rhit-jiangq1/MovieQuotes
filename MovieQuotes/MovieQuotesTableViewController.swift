@@ -32,7 +32,8 @@ class MovieQuotesTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
         let mq1 = MovieQuote(quote: "I'll be back", movie: "The terminator")
         let mq2 = MovieQuote(quote: "I'll be back", movie: "The terminator?")
         let mq3 = MovieQuote(quote: "I'll be back", movie: "The terminator!")
@@ -125,7 +126,9 @@ class MovieQuotesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Todo: implement delete
-           
+            movieQuotes.remove(at: indexPath.row)
+            tableView.reloadData()
+            
         }
     }
 
