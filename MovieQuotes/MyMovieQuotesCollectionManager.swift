@@ -15,10 +15,10 @@ class MovieQuotesCollectionManager{
     private init(){
         _collectionRef = Firestore.firestore().collection(kMovieQuotesCollectionPath)
     }
-    
     var latestMovieQuotes = [MovieQuote]()
     
-    func startListening(){
+    
+    func startListening(changeListener: @escaping (() -> Void) ){
         //TODO: RECIEVE A changelistener
         
         let query = _collectionRef.order(by: kMovieQuoteLastTouched, descending: true).limit(to: 50)
@@ -29,8 +29,10 @@ class MovieQuotesCollectionManager{
                 return
             }
             for document in documents {
-                print("\(document.documentID) => \(document.data())")
+//                print("\(document.documentID) => \(document.data())")
+                self.latestMovieQuotes.append(MovieQuote(documentSnapshot: document))
             }
+            changeListener()
         }
         
     }
