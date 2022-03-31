@@ -47,12 +47,14 @@ class MovieQuotesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        MovieQuotesCollectionManager.shared.startListening()
         tableView.reloadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        tableView.reloadData()
+        MovieQuotesCollectionManager.shared.stopListening()
+//        tableView.reloadData()
     }
     
     @objc func showAddQuoteDialog(){
