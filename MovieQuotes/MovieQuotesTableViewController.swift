@@ -155,7 +155,10 @@ class MovieQuotesTableViewController: UITableViewController {
 //            movieQuotes.remove(at: indexPath.row)
 //            tableView.reloadData()
             
-            //TODO: implement delete
+            let mqToDelete = MovieQuotesCollectionManager.shared.latestMovieQuotes[indexPath.row]
+            
+            MovieQuotesCollectionManager.shared.delete(mqToDelete.documentId!)
+            
         }
     }
 
