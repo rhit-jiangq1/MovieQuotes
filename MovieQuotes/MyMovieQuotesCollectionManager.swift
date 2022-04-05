@@ -20,12 +20,11 @@ class MovieQuotesCollectionManager{
     var latestMovieQuotes = [MovieQuote]()
     
     
-    func startListening(changeListener: @escaping (() -> Void) ){
+    func startListening(changeListener: @escaping (() -> Void) ) -> ListenerRegistration{
         //TODO: RECIEVE A changelistener
-        
         let query = _collectionRef.order(by: kMovieQuoteLastTouched, descending: true).limit(to: 50)
         
-        listenerRegistration = query.addSnapshotListener { querySnapshot, error in
+        return query.addSnapshotListener { querySnapshot, error in
             guard let documents = querySnapshot?.documents else {
                 print("Error fetching documents: \(error!)")
                 return
@@ -40,7 +39,7 @@ class MovieQuotesCollectionManager{
         
     }
     
-    func stopListening(){
+    func stopListening(_ listenerRegistration: ListenerRegistration?){
         //IMPLEMENT
         print("remove the listener")
         listenerRegistration?.remove()

@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Firebase
 
 class MovieQuoteTableViewCell: UITableViewCell{             //use UITableViewCell here
     
     @IBOutlet weak var quoteLabel: UILabel!
+    
     @IBOutlet weak var movieLabel: UILabel!
     
     
@@ -22,6 +24,7 @@ class MovieQuotesTableViewController: UITableViewController {
     let kMovieQuoteCell = "MovieQuoteCell"//1. add constant for MovieQuoteCell identifier
 //    let names = ["Dave", "Kristy", "Mckinley", "Keegan", "Bowen", "Neale"]//3. add array of names
     let kmovieQuoteDetailSegue = "movieQuoteDetailSegue"
+    var movieQuotesListenerRegistration: ListenerRegistration?
 //    var movieQuotes = [MovieQuote]()
     
     override func viewDidLoad() {
@@ -47,7 +50,7 @@ class MovieQuotesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        MovieQuotesCollectionManager.shared.startListening{
+        movieQuotesListenerRegistration = MovieQuotesCollectionManager.shared.startListening{
             print("the movie quotes were updated")
             for mq in MovieQuotesCollectionManager.shared.latestMovieQuotes{
                 print("\(mq.quote) in \(mq.movie)")
@@ -60,7 +63,7 @@ class MovieQuotesTableViewController: UITableViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        MovieQuotesCollectionManager.shared.stopListening()
+        MovieQuotesCollectionManager.shared.stopListening(movieQuotesListenerRegistration)
 //        tableView.reloadData()
     }
     
@@ -171,13 +174,11 @@ class MovieQuotesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == kmovieQuoteDetailSegue{
             let mqdvc = segue.destination as! MovieQuoteDetailViewController
-            
             if let indexPath = tableView.indexPathForSelectedRow {
 //                mqdvc.movieQuote = movieQuotes[indexPath.row]
-                
-                //Todo: inform the detail view about the movie quote
-                
-                //NOTE: For now, it will crash!!!
+                let mq = MovieQuotesCollectionManager.shared.latestMovieQuotes[indexPath.row]
+                mqdvc.movieQuoteDocumentId = mq.documentId
+    
             }
         }
         // Get the new view controller using segue.destination.
