@@ -31,8 +31,8 @@ class MovieQuoteDetailViewController: UIViewController {
 //    }
     
     func updateView(){
-        quoteLabel.text = movieQuote.quote
-        movieLabel.text = movieQuote.movie
+//        quoteLabel.text = movieQuote.quote
+//        movieLabel.text = movieQuote.movie
     }
     
     @objc func showEditQuoteDialog(){
@@ -42,10 +42,14 @@ class MovieQuoteDetailViewController: UIViewController {
         alertController.addTextField { textField in
             textField.placeholder = "Quote"
             textField.text = self.movieQuote.quote
+            
+            //TODO: uput in the quote data using the manager's data
         }
         alertController.addTextField { textField in
             textField.placeholder = "Movie"
             textField.text = self.movieQuote.movie
+            
+            //TODO: put in the movie data using the manager's data
         }
         
         

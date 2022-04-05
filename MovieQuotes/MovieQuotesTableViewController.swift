@@ -53,6 +53,7 @@ class MovieQuotesTableViewController: UITableViewController {
                 print("\(mq.quote) in \(mq.movie)")
             }
             self.tableView.reloadData()
+            print("update the table due to new data")
         }
         
     }
