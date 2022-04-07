@@ -20,10 +20,19 @@ class MovieQuoteDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(showEditQuoteDialog))
         
-        
-        
+        updateView()
+    }
+    
+    func showOrHideEditButton(){
+        if(AuthManager.shared.currentUser?.uid == MovieQuotesDocumentManager.shared.latestMovieQuote?.authorUid){
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit,
+                                                                     target: self,
+                                                                     action: #selector(showEditQuoteDialog))
+        }else{
+            print("this is not your quote, don't allow edit")
+            navigationItem.rightBarButtonItem = nil
+        }
     }
     
     //If the viewDidLoad crashes, it was too early, then I could do this
@@ -32,6 +41,7 @@ class MovieQuoteDetailViewController: UIViewController {
         movieQuoteListenerRegistration = MovieQuotesDocumentManager.shared.startListening(for: movieQuoteDocumentId!){
             print("Todo: update the view")
             self.updateView()
+            self.showOrHideEditButton()
             
         }
     }
