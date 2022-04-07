@@ -57,6 +57,14 @@ class MovieQuotesTableViewController: UITableViewController {
             }
             self.tableView.reloadData()
             print("update the table due to new data")
+            
+            //TODO: Eventually use real login, but for now user Guest mode
+            if(AuthManager.shared.isSignedIn) {
+                print("User is already signed in")
+            } else {
+                print("No user, so singing in anonymously")
+                AuthManager.shared.signInAnonymously()
+            }
         }
         
     }
@@ -151,6 +159,11 @@ class MovieQuotesTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool{
+        let mq = MovieQuotesCollectionManager.shared.latestMovieQuotes[indexPath.row]
+        return AuthManager.shared.currentUser?.uid == mq.authorUid
+    }
+    
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

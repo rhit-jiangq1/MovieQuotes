@@ -47,7 +47,7 @@ class MovieQuotesCollectionManager{
     
     func add(_ mq:MovieQuote){
         var ref: DocumentReference? = nil
-        ref = _collectionRef.addDocument(data: [kMovieQuoteQuote : mq.quote, kMovieQuoteMovie: mq.movie, kMovieQuoteLastTouched: Timestamp.init()])
+        ref = _collectionRef.addDocument(data: [kMovieQuoteQuote : mq.quote, kMovieQuoteMovie: mq.movie, kMovieQuoteLastTouched: Timestamp.init(),kMovieQuoteAuthorUid: AuthManager.shared.currentUser!.uid])
         {err in
             if let err = err {
                 print("Error adding document \(err)")

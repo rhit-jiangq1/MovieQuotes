@@ -12,4 +12,4 @@ let kMovieQuoteMovie = "movie"
 let kMovieQuoteQuote = "quote"
 let kMovieQuoteCreated = "created"
 let kMovieQuoteLastTouched = "lastTouched"
-
+let kMovieQuoteAuthorUid = "authorUid"

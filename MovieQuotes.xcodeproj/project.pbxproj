@@ -11,9 +11,11 @@
 		087053FE27F5D2A500752245 /* MyMovieQuotesCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087053FD27F5D2A500752245 /* MyMovieQuotesCollectionManager.swift */; };
 		0870540027F5D37D00752245 /* MovieQuoteDocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087053FF27F5D37D00752245 /* MovieQuoteDocumentManager.swift */; };
 		0870540227F5D4A500752245 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0870540127F5D4A500752245 /* Constants.swift */; };
-		0870540627F5DBE400752245 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0870540527F5DBE400752245 /* FirebaseAnalytics */; };
-		0870540827F5DBE400752245 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0870540727F5DBE400752245 /* FirebaseFirestore */; };
 		0870540A27F5DE6B00752245 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0870540927F5DE6B00752245 /* GoogleService-Info.plist */; };
+		0870541327FF10B800752245 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0870541227FF10B800752245 /* AuthManager.swift */; };
+		0870542427FF139000752245 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0870542327FF139000752245 /* FirebaseAnalytics */; };
+		0870542627FF139000752245 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0870542527FF139000752245 /* FirebaseAuth */; };
+		0870542827FF139000752245 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0870542727FF139000752245 /* FirebaseFirestore */; };
 		088B536827F1DD9A00959FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B536727F1DD9A00959FAF /* AppDelegate.swift */; };
 		088B536A27F1DD9A00959FAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B536927F1DD9A00959FAF /* SceneDelegate.swift */; };
 		088B536F27F1DD9A00959FAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088B536D27F1DD9A00959FAF /* Main.storyboard */; };
@@ -29,6 +31,7 @@
 		087053FF27F5D37D00752245 /* MovieQuoteDocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieQuoteDocumentManager.swift; sourceTree = "<group>"; };
 		0870540127F5D4A500752245 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0870540927F5DE6B00752245 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0870541227FF10B800752245 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		088B536427F1DD9A00959FAF /* MovieQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088B536727F1DD9A00959FAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		088B536927F1DD9A00959FAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,8 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0870540627F5DBE400752245 /* FirebaseAnalytics in Frameworks */,
-				0870540827F5DBE400752245 /* FirebaseFirestore in Frameworks */,
+				0870542427FF139000752245 /* FirebaseAnalytics in Frameworks */,
+				0870542627FF139000752245 /* FirebaseAuth in Frameworks */,
+				0870542827FF139000752245 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 				087053FD27F5D2A500752245 /* MyMovieQuotesCollectionManager.swift */,
 				087053FF27F5D37D00752245 /* MovieQuoteDocumentManager.swift */,
 				0870540127F5D4A500752245 /* Constants.swift */,
+				0870541227FF10B800752245 /* AuthManager.swift */,
 			);
 			path = MovieQuotes;
 			sourceTree = "<group>";
@@ -106,8 +111,9 @@
 			);
 			name = MovieQuotes;
 			packageProductDependencies = (
-				0870540527F5DBE400752245 /* FirebaseAnalytics */,
-				0870540727F5DBE400752245 /* FirebaseFirestore */,
+				0870542327FF139000752245 /* FirebaseAnalytics */,
+				0870542527FF139000752245 /* FirebaseAuth */,
+				0870542727FF139000752245 /* FirebaseFirestore */,
 			);
 			productName = MovieQuotes;
 			productReference = 088B536427F1DD9A00959FAF /* MovieQuotes.app */;
@@ -138,8 +144,7 @@
 			);
 			mainGroup = 088B535B27F1DD9A00959FAF;
 			packageReferences = (
-				0870540327F5DB7F00752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				0870540427F5DBE400752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				0870542227FF139000752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 088B536527F1DD9A00959FAF /* Products */;
 			projectDirPath = "";
@@ -170,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				088B536827F1DD9A00959FAF /* AppDelegate.swift in Sources */,
+				0870541327FF10B800752245 /* AuthManager.swift in Sources */,
 				088B537E27F1E59900959FAF /* MoveiQuote.swift in Sources */,
 				088B537C27F1E02300959FAF /* MovieQuotesTableViewController.swift in Sources */,
 				088B536A27F1DD9A00959FAF /* SceneDelegate.swift in Sources */,
@@ -396,15 +402,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0870540327F5DB7F00752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		0870540427F5DBE400752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		0870542227FF139000752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -415,14 +413,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0870540527F5DBE400752245 /* FirebaseAnalytics */ = {
+		0870542327FF139000752245 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0870540327F5DB7F00752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 0870542227FF139000752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		0870540727F5DBE400752245 /* FirebaseFirestore */ = {
+		0870542527FF139000752245 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0870540327F5DB7F00752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 0870542227FF139000752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		0870542727FF139000752245 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0870542227FF139000752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
