@@ -70,12 +70,14 @@ class MovieQuotesTableViewController: UITableViewController {
         //                AuthManager.shared.signInAnonymously()
         //            }
         //        }
-        if(AuthManager.shared.isSignedIn) {
-            print("User is already signed in")
-        } else {
-            print("No user, so singing in anonymously")
-            AuthManager.shared.signInAnonymously()
+        if(!AuthManager.shared.isSignedIn) {
+            print("U got to this page without a user")
+            navigationController?.popViewController(animated: true)
         }
+//        } else {
+//            print("No user, so singing in anonymously")
+//            AuthManager.shared.signInAnonymously()
+//        }
         
     }
     

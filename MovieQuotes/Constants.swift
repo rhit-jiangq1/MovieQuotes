@@ -13,3 +13,5 @@ let kMovieQuoteQuote = "quote"
 let kMovieQuoteCreated = "created"
 let kMovieQuoteLastTouched = "lastTouched"
 let kMovieQuoteAuthorUid = "authorUid"
+
+let kShowListSegue = "showListSegue"

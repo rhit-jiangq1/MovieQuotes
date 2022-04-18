@@ -132,12 +132,88 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="SRO-Hi-j7X" kind="relationship" relationship="rootViewController" id="MNb-Zw-KnL"/>
+                        <segue destination="9eF-v0-pP2" kind="relationship" relationship="rootViewController" id="LRj-ap-EaT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njJ-nU-FxG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="80"/>
+            <point key="canvasLocation" x="-459" y="80"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Srg-gr-ZQ8">
+            <objects>
+                <viewController id="9eF-v0-pP2" customClass="LoginViewController" customModule="MovieQuotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1e2-Yb-bfU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="q0f-JF-HNl">
+                                <rect key="frame" x="10" y="88" width="394" height="190"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLF-PH-UKf">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UjL-Ut-YyL" userLabel="EmailTextField">
+                                        <rect key="frame" x="0.0" y="39" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-bE-MoO">
+                                        <rect key="frame" x="0.0" y="78" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lfG-PN-fxe" userLabel="PasswordTextField">
+                                        <rect key="frame" x="0.0" y="117" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="Rmg-Ih-KJF">
+                                        <rect key="frame" x="0.0" y="156" width="394" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WX-Oa-mre">
+                                                <rect key="frame" x="0.0" y="0.0" width="181.5" height="34"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Create User"/>
+                                                <connections>
+                                                    <action selector="PressedCreateNewUser:" destination="9eF-v0-pP2" eventType="touchUpInside" id="Msm-cT-yCR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sU-P4-fgy">
+                                                <rect key="frame" x="212.5" y="0.0" width="181.5" height="34"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Login Existing User"/>
+                                                <connections>
+                                                    <action selector="PressedLoginExistingUser:" destination="9eF-v0-pP2" eventType="touchUpInside" id="ZOW-1r-3O1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JQb-m7-YQO"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="q0f-JF-HNl" firstAttribute="leading" secondItem="JQb-m7-YQO" secondAttribute="leading" constant="10" id="1CE-MT-HA9"/>
+                            <constraint firstItem="JQb-m7-YQO" firstAttribute="trailing" secondItem="q0f-JF-HNl" secondAttribute="trailing" constant="10" id="B1Q-e1-VAe"/>
+                            <constraint firstItem="q0f-JF-HNl" firstAttribute="top" secondItem="JQb-m7-YQO" secondAttribute="top" id="xcx-Yf-TUt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nzx-kH-4a5"/>
+                    <connections>
+                        <outlet property="EmailTextField" destination="UjL-Ut-YyL" id="Xzw-WO-xEn"/>
+                        <outlet property="PasswordTextField" destination="lfG-PN-fxe" id="exW-3c-BwC"/>
+                        <segue destination="SRO-Hi-j7X" kind="show" identifier="showListSegue" id="6jC-o2-jbq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RfK-hg-fHQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="80"/>
         </scene>
     </scenes>
     <resources>
