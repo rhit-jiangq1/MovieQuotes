@@ -76,4 +76,13 @@ class AuthManager{
         })
     }
     
+    func signOut(){
+        do {
+            try Auth.auth().signOut()
+        }catch{
+            print("Sign out failed: \(error)")
+        }
+        
+    }
+    
 }

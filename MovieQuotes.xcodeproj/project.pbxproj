@@ -22,7 +22,7 @@
 		088B537127F1DD9B00959FAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088B537027F1DD9B00959FAF /* Assets.xcassets */; };
 		088B537427F1DD9B00959FAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088B537227F1DD9B00959FAF /* LaunchScreen.storyboard */; };
 		088B537C27F1E02300959FAF /* MovieQuotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B537B27F1E02300959FAF /* MovieQuotesTableViewController.swift */; };
-		088B537E27F1E59900959FAF /* MoveiQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B537D27F1E59900959FAF /* MoveiQuote.swift */; };
+		088B537E27F1E59900959FAF /* MovieQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B537D27F1E59900959FAF /* MovieQuote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 		088B537327F1DD9B00959FAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		088B537527F1DD9B00959FAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		088B537B27F1E02300959FAF /* MovieQuotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieQuotesTableViewController.swift; sourceTree = "<group>"; };
-		088B537D27F1E59900959FAF /* MoveiQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveiQuote.swift; sourceTree = "<group>"; };
+		088B537D27F1E59900959FAF /* MovieQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieQuote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 				088B537027F1DD9B00959FAF /* Assets.xcassets */,
 				088B537227F1DD9B00959FAF /* LaunchScreen.storyboard */,
 				088B537527F1DD9B00959FAF /* Info.plist */,
-				088B537D27F1E59900959FAF /* MoveiQuote.swift */,
+				088B537D27F1E59900959FAF /* MovieQuote.swift */,
 				087053FD27F5D2A500752245 /* MyMovieQuotesCollectionManager.swift */,
 				087053FF27F5D37D00752245 /* MovieQuoteDocumentManager.swift */,
 				0870540127F5D4A500752245 /* Constants.swift */,
@@ -176,7 +176,7 @@
 			files = (
 				088B536827F1DD9A00959FAF /* AppDelegate.swift in Sources */,
 				0870541327FF10B800752245 /* AuthManager.swift in Sources */,
-				088B537E27F1E59900959FAF /* MoveiQuote.swift in Sources */,
+				088B537E27F1E59900959FAF /* MovieQuote.swift in Sources */,
 				088B537C27F1E02300959FAF /* MovieQuotesTableViewController.swift in Sources */,
 				088B536A27F1DD9A00959FAF /* SceneDelegate.swift in Sources */,
 				087053FC27F3343700752245 /* MovieQuoteDetailViewController.swift in Sources */,
