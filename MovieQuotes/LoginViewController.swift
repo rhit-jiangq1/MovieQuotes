@@ -28,9 +28,8 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: kShowListSegue, sender: self)
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         AuthManager.shared.removeObserver(loginHandle)
     }
 
@@ -40,6 +39,8 @@ class LoginViewController: UIViewController {
         let password = PasswordTextField.text!
         
         print("Pressed CREATE NEW User Email: \(email), Password: \(password)")
+        
+        AuthManager.shared.signInNewEmailPasswordUser(email: email, password: password)
     }
     
     @IBAction func PressedLoginExistingUser(_ sender: Any) {
@@ -47,6 +48,8 @@ class LoginViewController: UIViewController {
         let password = PasswordTextField.text!
         
         print("Pressed Login Existing User Email: \(email), Password: \(password)")
+        
+        AuthManager.shared.loginExistingEmailPasswordUser(email: email, password: password)
     }
     
     

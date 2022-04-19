@@ -27,6 +27,8 @@ class MovieQuotesTableViewController: UITableViewController {
     var movieQuotesListenerRegistration: ListenerRegistration?
     //    var movieQuotes = [MovieQuote]()
     var isShowingAllQuotes = true
+    var logoutHandle: AuthStateDidChangeListenerHandle?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,14 +72,18 @@ class MovieQuotesTableViewController: UITableViewController {
         //                AuthManager.shared.signInAnonymously()
         //            }
         //        }
-        if(!AuthManager.shared.isSignedIn) {
-            print("U got to this page without a user")
-            navigationController?.popViewController(animated: true)
-        }
+//        if(!AuthManager.shared.isSignedIn) {
+//            print("U got to this page without a user")
+//            navigationController?.popViewController(animated: true)
+//        }
 //        } else {
 //            print("No user, so singing in anonymously")
 //            AuthManager.shared.signInAnonymously()
 //        }
+        logoutHandle = AuthManager.shared.addLogoutOvserver {
+            print("Someone sign out, go back to the login view controller")
+            self.navigationController?.popViewController(animated: true)
+        }
         
     }
     
@@ -85,6 +91,7 @@ class MovieQuotesTableViewController: UITableViewController {
         super.viewDidDisappear(animated)
         MovieQuotesCollectionManager.shared.stopListening(movieQuotesListenerRegistration)
         //        tableView.reloadData()
+        AuthManager.shared.removeObserver(logoutHandle)
     }
     
     func startListeningForMovieQuotes(){
