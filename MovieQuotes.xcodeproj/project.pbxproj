@@ -17,6 +17,7 @@
 		0870542627FF139000752245 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0870542527FF139000752245 /* FirebaseAuth */; };
 		0870542827FF139000752245 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0870542727FF139000752245 /* FirebaseFirestore */; };
 		087CE46B280D9D480033C4B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CE46A280D9D480033C4B1 /* LoginViewController.swift */; };
+		087CE46D280EE3200033C4B1 /* RoseFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CE46C280EE3200033C4B1 /* RoseFire.swift */; };
 		088B536827F1DD9A00959FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B536727F1DD9A00959FAF /* AppDelegate.swift */; };
 		088B536A27F1DD9A00959FAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B536927F1DD9A00959FAF /* SceneDelegate.swift */; };
 		088B536F27F1DD9A00959FAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088B536D27F1DD9A00959FAF /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		0870540927F5DE6B00752245 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0870541227FF10B800752245 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		087CE46A280D9D480033C4B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		087CE46C280EE3200033C4B1 /* RoseFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoseFire.swift; sourceTree = "<group>"; };
 		088B536427F1DD9A00959FAF /* MovieQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088B536727F1DD9A00959FAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		088B536927F1DD9A00959FAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				0870540127F5D4A500752245 /* Constants.swift */,
 				0870541227FF10B800752245 /* AuthManager.swift */,
 				087CE46A280D9D480033C4B1 /* LoginViewController.swift */,
+				087CE46C280EE3200033C4B1 /* RoseFire.swift */,
 			);
 			path = MovieQuotes;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087CE46D280EE3200033C4B1 /* RoseFire.swift in Sources */,
 				088B536827F1DD9A00959FAF /* AppDelegate.swift in Sources */,
 				0870541327FF10B800752245 /* AuthManager.swift in Sources */,
 				088B537E27F1E59900959FAF /* MovieQuote.swift in Sources */,

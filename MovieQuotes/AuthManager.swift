@@ -76,13 +76,25 @@ class AuthManager{
         })
     }
     
-    func signOut(){
-        do {
-            try Auth.auth().signOut()
-        }catch{
-            print("Sign out failed: \(error)")
+    func signInWithRosefireToken(_ rosefireToken: String){
+        Auth.auth().signIn(withCustomToken: rosefireToken) { (authResult, error) in
+            if let error = error {
+                print("Firebase sign in error! \(error)")
+                return
+            }
+            print("The user is now actually signed in using the Rosefire token")
+            // User is signed in using Firebase!
+        }
+    }
+        
+        
+        func signOut(){
+            do {
+                try Auth.auth().signOut()
+            }catch{
+                print("Sign out failed: \(error)")
+            }
+            
         }
         
     }
-    
-}

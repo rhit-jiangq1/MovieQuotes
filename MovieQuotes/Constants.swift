@@ -15,3 +15,5 @@ let kMovieQuoteLastTouched = "lastTouched"
 let kMovieQuoteAuthorUid = "authorUid"
 
 let kShowListSegue = "showListSegue"
+
+let kRosefireRegistryToken = "e2fd2270-be2e-41ed-8b5f-e6aead489f50"
