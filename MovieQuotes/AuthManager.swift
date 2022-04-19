@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import GoogleSignIn
 
 class AuthManager{
     
@@ -87,6 +88,9 @@ class AuthManager{
         }
     }
         
+    func signInWithGoogleCredential(_ googleCredential: AuthCredential){
+        Auth.auth().signIn(with: googleCredential)
+    }
         
         func signOut(){
             do {

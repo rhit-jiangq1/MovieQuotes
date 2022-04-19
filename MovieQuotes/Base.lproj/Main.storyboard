@@ -196,26 +196,41 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Rs-i9-9ti">
-                                <rect key="frame" x="87" y="408" width="240" height="34"/>
+                                <rect key="frame" x="87" y="408" width="240" height="41"/>
                                 <color key="backgroundColor" red="0.50196078431372548" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="7ew-PH-s6i"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="RoseFire"/>
                                 <connections>
                                     <action selector="pressedRoseFire:" destination="9eF-v0-pP2" eventType="touchUpInside" id="zze-EE-oWF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJt-WY-AyX">
+                                <rect key="frame" x="87" y="489" width="240" height="41"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="HID-CB-bW1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Google Sign In"/>
+                                <connections>
+                                    <action selector="pressedGoogleSignIn:" destination="9eF-v0-pP2" eventType="touchUpInside" id="65l-hr-9sr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JQb-m7-YQO"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4Rs-i9-9ti" firstAttribute="top" secondItem="q0f-JF-HNl" secondAttribute="bottom" constant="80" id="063-ss-TmI"/>
                             <constraint firstItem="q0f-JF-HNl" firstAttribute="leading" secondItem="JQb-m7-YQO" secondAttribute="leading" constant="20" id="1CE-MT-HA9"/>
                             <constraint firstItem="JQb-m7-YQO" firstAttribute="trailing" secondItem="q0f-JF-HNl" secondAttribute="trailing" constant="20" id="B1Q-e1-VAe"/>
+                            <constraint firstItem="IJt-WY-AyX" firstAttribute="centerX" secondItem="JQb-m7-YQO" secondAttribute="centerX" id="f9r-bz-oSq"/>
                             <constraint firstItem="4Rs-i9-9ti" firstAttribute="centerX" secondItem="JQb-m7-YQO" secondAttribute="centerX" id="uCs-nG-BCg"/>
+                            <constraint firstItem="IJt-WY-AyX" firstAttribute="top" secondItem="4Rs-i9-9ti" secondAttribute="bottom" constant="40" id="uiT-p2-dpe"/>
                             <constraint firstItem="q0f-JF-HNl" firstAttribute="top" secondItem="JQb-m7-YQO" secondAttribute="top" constant="50" id="xcx-Yf-TUt"/>
                         </constraints>
                     </view>
