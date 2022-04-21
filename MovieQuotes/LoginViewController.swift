@@ -108,6 +108,38 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func signInWithGoogle1(_ sender: Any) {
+        print("Sign in with Google")
+        
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { user, error in
+            
+            if let error = error {
+                // ...
+                print("error with Google SignIn \(error)")
+                return
+            }
+            
+            guard
+                let authentication = user?.authentication,
+                let idToken = authentication.idToken
+            else {
+                return
+            }
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: authentication.accessToken)
+            
+            print("Google sign in worked! Now use the credential to do the real Firebase sign in")
+            AuthManager.shared.signInWithGoogleCredential(credential)
+            // ...
+        }
+    }
     
     
     /*

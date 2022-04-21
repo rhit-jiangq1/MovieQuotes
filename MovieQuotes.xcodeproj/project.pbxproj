@@ -19,6 +19,9 @@
 		087CE46B280D9D480033C4B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CE46A280D9D480033C4B1 /* LoginViewController.swift */; };
 		087CE46D280EE3200033C4B1 /* RoseFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087CE46C280EE3200033C4B1 /* RoseFire.swift */; };
 		087CE470280EEC7E0033C4B1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 087CE46F280EEC7E0033C4B1 /* GoogleSignIn */; };
+		087FED3928118415005F656A /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087FED3828118415005F656A /* SideMenuViewController.swift */; };
+		087FED3C28118443005F656A /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 087FED3B28118443005F656A /* SideMenu */; };
+		087FED45281190FB005F656A /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087FED44281190FB005F656A /* ProfilePageViewController.swift */; };
 		088B536827F1DD9A00959FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B536727F1DD9A00959FAF /* AppDelegate.swift */; };
 		088B536A27F1DD9A00959FAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B536927F1DD9A00959FAF /* SceneDelegate.swift */; };
 		088B536F27F1DD9A00959FAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 088B536D27F1DD9A00959FAF /* Main.storyboard */; };
@@ -37,6 +40,8 @@
 		0870541227FF10B800752245 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		087CE46A280D9D480033C4B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		087CE46C280EE3200033C4B1 /* RoseFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoseFire.swift; sourceTree = "<group>"; };
+		087FED3828118415005F656A /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		087FED44281190FB005F656A /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		088B536427F1DD9A00959FAF /* MovieQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088B536727F1DD9A00959FAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		088B536927F1DD9A00959FAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 				0870542427FF139000752245 /* FirebaseAnalytics in Frameworks */,
 				087CE470280EEC7E0033C4B1 /* GoogleSignIn in Frameworks */,
 				0870542627FF139000752245 /* FirebaseAuth in Frameworks */,
+				087FED3C28118443005F656A /* SideMenu in Frameworks */,
 				0870542827FF139000752245 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +104,8 @@
 				0870541227FF10B800752245 /* AuthManager.swift */,
 				087CE46A280D9D480033C4B1 /* LoginViewController.swift */,
 				087CE46C280EE3200033C4B1 /* RoseFire.swift */,
+				087FED3828118415005F656A /* SideMenuViewController.swift */,
+				087FED44281190FB005F656A /* ProfilePageViewController.swift */,
 			);
 			path = MovieQuotes;
 			sourceTree = "<group>";
@@ -123,6 +131,7 @@
 				0870542527FF139000752245 /* FirebaseAuth */,
 				0870542727FF139000752245 /* FirebaseFirestore */,
 				087CE46F280EEC7E0033C4B1 /* GoogleSignIn */,
+				087FED3B28118443005F656A /* SideMenu */,
 			);
 			productName = MovieQuotes;
 			productReference = 088B536427F1DD9A00959FAF /* MovieQuotes.app */;
@@ -155,6 +164,7 @@
 			packageReferences = (
 				0870542227FF139000752245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				087CE46E280EEC7E0033C4B1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				087FED3A28118443005F656A /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 088B536527F1DD9A00959FAF /* Products */;
 			projectDirPath = "";
@@ -188,10 +198,12 @@
 				088B536827F1DD9A00959FAF /* AppDelegate.swift in Sources */,
 				0870541327FF10B800752245 /* AuthManager.swift in Sources */,
 				088B537E27F1E59900959FAF /* MovieQuote.swift in Sources */,
+				087FED3928118415005F656A /* SideMenuViewController.swift in Sources */,
 				088B537C27F1E02300959FAF /* MovieQuotesTableViewController.swift in Sources */,
 				088B536A27F1DD9A00959FAF /* SceneDelegate.swift in Sources */,
 				087053FC27F3343700752245 /* MovieQuoteDetailViewController.swift in Sources */,
 				087053FE27F5D2A500752245 /* MyMovieQuotesCollectionManager.swift in Sources */,
+				087FED45281190FB005F656A /* ProfilePageViewController.swift in Sources */,
 				0870540027F5D37D00752245 /* MovieQuoteDocumentManager.swift in Sources */,
 				087CE46B280D9D480033C4B1 /* LoginViewController.swift in Sources */,
 				0870540227F5D4A500752245 /* Constants.swift in Sources */,
@@ -430,6 +442,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		087FED3A28118443005F656A /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -452,6 +472,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 087CE46E280EEC7E0033C4B1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		087FED3B28118443005F656A /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 087FED3A28118443005F656A /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
