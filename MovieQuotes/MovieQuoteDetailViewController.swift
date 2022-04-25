@@ -13,15 +13,21 @@ class MovieQuoteDetailViewController: UIViewController {
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var movieLabel: UILabel!
     
+    @IBOutlet weak var AuthorBoxStackView: UIStackView!
+    @IBOutlet weak var AuthorProfileImageView: UIImageView!
+    @IBOutlet weak var AuthorNameLabel: UILabel!
+    
+    
+    
     //    var movieQuote: MovieQuote!
     var movieQuoteDocumentId: String!
     
     var movieQuoteListenerRegistration: ListenerRegistration?
+    var userListenerRegistration: ListenerRegistration?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        updateView()
+        //        updateView()
     }
     
     func showOrHideEditButton(){
@@ -43,6 +49,15 @@ class MovieQuoteDetailViewController: UIViewController {
             self.updateView()
             self.showOrHideEditButton()
             
+            //Start listening for the User (Author of data)
+            self.AuthorBoxStackView.isHidden = true
+            if let authorUid = MovieQuotesDocumentManager.shared.latestMovieQuote!.authorUid{
+                UserDocumentManager.shared.stopListening(self.userListenerRegistration)
+                self.userListenerRegistration = UserDocumentManager.shared.startListening(for: authorUid){
+                    //                    self.updateView()
+                    self.updateAuthorBox()
+                }
+            }
         }
     }
     
@@ -52,14 +67,25 @@ class MovieQuoteDetailViewController: UIViewController {
     }
     
     
-    
-    
     func updateView(){
         if let mq = MovieQuotesDocumentManager.shared.latestMovieQuote{
             quoteLabel.text = mq.quote
             movieLabel.text = mq.movie
         }
     }
+    
+    func updateAuthorBox(){
+        print("TODO: update the author box with name: \(UserDocumentManager.shared.name)")
+        print("TODO: update the author box with photoURL: \(UserDocumentManager.shared.photoUrl)")
+        
+        self.AuthorBoxStackView.isHidden = (UserDocumentManager.shared.name.isEmpty)&&(UserDocumentManager.shared.photoUrl.isEmpty)
+        AuthorNameLabel.text = UserDocumentManager.shared.name
+        
+        if !UserDocumentManager.shared.photoUrl.isEmpty{
+            ImageUtils.load(imageView: AuthorProfileImageView, from: UserDocumentManager.shared.photoUrl)
+        }
+    }
+    
     
     @objc func showEditQuoteDialog(){
         

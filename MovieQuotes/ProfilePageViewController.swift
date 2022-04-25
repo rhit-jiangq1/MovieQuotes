@@ -2,28 +2,35 @@
 //  ProfilePageViewController.swift
 //  MovieQuotes
 //
-//  Created by Qijun Jiang on 2022/4/21.
+//  Created by Qijun Jiang on 2022/4/25.
 //
 
 import UIKit
+import Firebase
 
 class ProfilePageViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    @IBOutlet weak var displayNameTextField: UITextField!
+    @IBOutlet weak var profilePhotoImageView: UIImageView!
+    
+    var userListenerRegistration: ListenerRegistration?
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        userListenerRegistration = UserDocumentManager.shared.startListening(for: AuthManager.shared.currentUser!.uid) {
+            self.updateView()
+        }
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        UserDocumentManager.shared.stopListening(userListenerRegistration)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateView() {
+        displayNameTextField.text = UserDocumentManager.shared.name
+        if !UserDocumentManager.shared.photoUrl.isEmpty{
+            ImageUtils.load(imageView: profilePhotoImageView, from: UserDocumentManager.shared.photoUrl)
+        }
     }
-    */
-
+    
 }
