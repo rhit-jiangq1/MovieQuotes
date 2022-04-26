@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     var loginHandle: AuthStateDidChangeListenerHandle?
+    var rosefireName: String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        rosefireName = nil
         loginHandle = AuthManager.shared.addLoginOvserver {
             print("TODO: fire the showListSeguue. THere is already someone signed in")
             self.performSegue(withIdentifier: kShowListSegue, sender: self)
@@ -66,6 +69,7 @@ class LoginViewController: UIViewController {
             //          print("Result = \(result!.token!)")
             //          print("Result = \(result!.username!)")
             print("Rosefire worked. Name = \(result!.name!)")
+            self.rosefireName = result!.name!
             //          print("Result = \(result!.email!)")
             //          print("Result = \(result!.group!)")
             //
@@ -142,14 +146,21 @@ class LoginViewController: UIViewController {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Make sure the segues identitfier is correct
+        print("Segues identifier is \(segue.identifier)")
+        if segue.identifier == kShowListSegue{
+            print("Name = \(rosefireName ?? AuthManager.shared.currentUser?.displayName)")
+            print("PhotoURL = \(AuthManager.shared.currentUser?.photoURL)")
+            
+            UserDocumentManager.shared.addNewUserMaybe(uid: AuthManager.shared.currentUser!.uid,
+                                                       name: rosefireName ?? AuthManager.shared.currentUser!.displayName,
+                                                       photoUrl: AuthManager.shared.currentUser?.photoURL?.absoluteString)
+        }
+    }
     
 }

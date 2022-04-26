@@ -19,6 +19,23 @@ class UserDocumentManager{
         _collectionRef = Firestore.firestore().collection(kUsersCollectionPath)
     }
     
+    func addNewUserMaybe(uid:String, name:String?, photoUrl:String?){
+        // *GET* the user document for this uid
+        //if it ialready exists do nothing
+        //there is no user document, make it using the name and photourl.
+        let docRef = _collectionRef.document(uid)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                
+                print("Document existing, do nothing. Here is the data: \(document.data()!)")
+            } else {
+                print("Document does not exist, create this user")
+                docRef.setData([kUserName:name ?? "", kUserPhotoUrl:photoUrl ?? ""])
+            }
+        }
+    }
+    
     
     func startListening(for documentId: String, changeListener: @escaping (() -> Void) ) -> ListenerRegistration{
         //TODO: RECIEVE A changelistener
